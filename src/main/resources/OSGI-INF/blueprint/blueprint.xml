@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:cm="http://aries.apache.org/blueprint/xmlns/blueprint-cm/v1.1.0">
+
+
+    <cm:managed-service-factory
+            id="logLoopFactory"
+            factory-pid="com.connexta.cellar.LogLoopImpl"
+            interface="com.connexta.cellar.api.LogLoop">
+        <cm:managed-component
+                class="com.connexta.cellar.LogLoopImpl"
+                init-method="init" destroy-method="destroy">
+            <argument value="NAME_FROM_BLUEPRINT"/>
+            <cm:managed-properties persistent-id="" update-strategy="container-managed"/>
+        </cm:managed-component>
+    </cm:managed-service-factory>
+
+
+    <!--################################################################-->
+
+
+    <!--<bean id="logLoopBean" class="com.connexta.cellar.LogLoopImpl"-->
+          <!--init-method="init" destroy-method="destroy">-->
+        <!--<argument value="NAME_FROM_BLUEPRINT"/>-->
+        <!--<cm:managed-properties persistent-id="com.connexta.cellar.LogLoopImpl"-->
+                               <!--update-strategy="container-managed"/>-->
+    <!--</bean>-->
+    <!--<service id="logLoopService" ref="logLoopBean" interface="com.connexta.cellar.api.LogLoop"/>-->
+
+
+</blueprint>
