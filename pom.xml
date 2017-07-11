@@ -6,7 +6,14 @@
 
     <groupId>com.connexta.cellar</groupId>
     <artifactId>cellar-msf-testing</artifactId>
+
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>ext</module>
+        <module>msf</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -35,18 +42,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Export-Package>com.connexta.cellar.api</Export-Package>
-                        <!--<Private-Package>org.foo.myproject.*</Private-Package>-->
-                        <Bundle-Activator>com.connexta.cellar.LogLoopImpl</Bundle-Activator>
-                    </instructions>
                 </configuration>
             </plugin>
         </plugins>
